@@ -11,6 +11,8 @@ The data for this project were obtained from [GPO Bulk Data](https://www.gpo.gov
 - `senators.csv`: Contains the list of all Senators who served during the 116th Congress, including their name, state, party affiliation (R - Republican, D - Democrat, I - Independent), and an ID number from 1-1022. Also includes (x,y) coordinates corresponding to the latitude and longitude of points within each state.
 - `senateCosponsorship.csv`: Contains a list of all pairs of Senators (referred to by their ID numbers) who have co-sponsored at least 8 bills together.
 
+This project was initially developed as part of the Big Data (45980) course at CMU Tepper with Dr. Amr Farahat
+
 ## Python Package Requirements
 
 To run this project, you need to install the required packages from `requirements.txt`. You can do this using the following command:
