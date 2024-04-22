@@ -1,0 +1,7 @@
+folium==0.15.1
+geopandas==0.14.1
+matplotlib==3.8.2
+networkx==3.2.1
+numpy==1.26.4
+pandas==2.2.2
+Shapely==2.0.4
