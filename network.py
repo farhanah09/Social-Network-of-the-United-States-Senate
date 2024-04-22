@@ -97,3 +97,50 @@ which pass through $v$. '''
 betweenness_centrality = nx.centrality.betweenness_centrality(G)  # save results in a variable to use again
 (sorted(betweenness_centrality.items(), key=lambda item: item[1], reverse=True))[:8]
 
+# The number of communities in the network
+
+'''A community is a group of nodes, so that nodes inside the group are connected with many more 
+edges than between groups. Two different algorithms will be used for communities detection in this 
+network
+
+This function determines by itself the number of communities that will be detected. 
+Now the communities will be iterated through and a colors list will be created to contain 
+the same color for nodes that belong to the same community'''
+
+node_list = list(G)
+colors = ["" for x in range(0,len(node_list))]  # initialize colors list
+counter = 0
+for com in nx.community.greedy_modularity_communities(G):
+    color = "#%06X" % randint(0, 0xFFFFFF)  # creates random RGB color
+    counter += 1
+    for node in list(com):
+        i = node_list.index(node)
+        colors[i] = color  
+print("The number of communities are", counter)
+
+# The communities in the network are - 
+
+communities = nx.algorithms.community.greedy_modularity_communities(G)
+
+community_dict = {}
+for i, community in enumerate(communities):
+    community_dict[i] = list(community)
+
+print(community_dict)
+
+# The number of republicans and Democrats in the network are - 
+
+community_1 = senators[senators["id"].isin(community_dict[0])]
+print(community_1["party"].value_counts())
+
+community_2 = senators[senators["id"].isin(community_dict[1])]
+print(community_2["party"].value_counts())
+
+community_3 = senators[senators["id"].isin(community_dict[2])]
+print(community_3["party"].value_counts())
+
+community_4 = senators[senators["id"].isin(community_dict[3])]
+print(community_4["party"].value_counts())
+
+community_5 = senators[senators["id"].isin(community_dict[4])]
+print(community_5["party"].value_counts())
