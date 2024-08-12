@@ -1,3 +1,5 @@
+<a href="https://app.commanddash.io/agent?github=https://github.com/farhanah09/Social-Network-of-the-United-States-Senate"><img src="https://img.shields.io/badge/AI-Code%20Gen-EB9FDA"></a>
+
 # Social Network of the United States Senate
 
 ## Problem Description
